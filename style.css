@@ -186,60 +186,44 @@ a {
     text-align: center;
     font-size: 0.9rem;
 }
-/* ======== Mobile (max‑width: 767px) ======== */
-@media (max-width: 767px) {
+/* ======== Extra-Small iPhone Fix (max-width: 414px) ======== */
+@media (max-width: 414px) {
 
-  /* 共通余白を少し詰める */
+  /* ① MENU を 1 カラムに & 画像を大きく */
+  .menu-grid {
+    grid-template-columns: 1fr;   /* 1 列 */
+    max-width: 320px;             /* 中央寄せ */
+    margin: 0 auto;
+  }
+  .menu-item img {
+    height: 180px;                /* 少し縦長に */
+  }
+
+  /* ② GALLERY を 2→1 カラムへ */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  /* ③ セクション余白をさらに詰める */
   .section {
-    padding: 60px 0;
+    padding: 48px 0;
   }
 
-  /* ヒーローの高さ調整 */
-  .hero {
-    height: 70vh;
-  }
+  /* ④ ヒーローのテキスト行間を調整 */
   .hero-content h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.3;
   }
   .hero-content p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
-  /* ナビゲーションを縦並びに（簡易版） */
-  .nav-links {
-    flex-direction: column;
-    gap: 12px;
-    background: rgba(0,0,0,0.8);
-    position: absolute;
-    top: 60px;
-    right: 5%;
-    padding: 20px 24px;
-    border-radius: 8px;
-    display: none;          /* デフォルト非表示 */
-  }
-  /* ハンバーガーアイコン代わりに Logo をタップで開閉 */
-  .logo {
-    cursor: pointer;
-  }
-  .logo.open + .nav-links {
-    display: flex;
-  }
-
-  /* MENU／GALLERY：2 カラムに */
-  .menu-grid,
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* 画像を縦長カードにフィット */
-  .menu-item img,
-  .gallery-grid img {
-    height: 140px;
-    object-fit: cover;
-  }
-
-  /* アクセス情報の文字サイズ調整 */
-  .access-info p {
-    font-size: 0.9rem;
+  /* ⑤ ACCESS の地図高さを縮小 */
+  .map iframe {
+    height: 220px;
   }
 }
