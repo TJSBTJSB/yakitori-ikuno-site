@@ -113,5 +113,27 @@
     <footer class="footer">
         <p>&copy; 2025 焼き鶏 いく乃.</p>
     </footer>
+<script>
+document.querySelector('.nav-toggle').onclick = () =>
+  document.querySelector('.nav-links').classList.toggle('active');
+</script>
+
 </body>
 </html>
+<header class="hero">
+  <nav class="navbar">
+      <h1 class="logo">焼き鶏 <span class="accent">いく乃</span></h1>
+
+      <!-- ▼ この１行を追加（ハンバーガー） -->
+      <div class="nav-toggle"></div>
+
+      <ul class="nav-links">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#menu">MENU</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#access">ACCESS</a></li>
+          <li><a href="#reserve">RESERVE</a></li>
+      </ul>
+  </nav>
+  …
+</header>
