@@ -124,8 +124,10 @@ document.querySelector('.nav-toggle').onclick = () =>
   <nav class="navbar">
       <h1 class="logo">焼き鶏 <span class="accent">いく乃</span></h1>
 
-      <!-- ▼ この１行を追加（ハンバーガー） -->
-      <div class="nav-toggle"></div>
+      <!-- ハンバーガー -->
+      <button class="nav-toggle" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
 
       <ul class="nav-links">
           <li><a href="#about">ABOUT</a></li>
@@ -135,5 +137,13 @@ document.querySelector('.nav-toggle').onclick = () =>
           <li><a href="#reserve">RESERVE</a></li>
       </ul>
   </nav>
-  …
+
+  …（ヒーロー本文はそのまま）…
 </header>
+
+<!-- ▼ ページ最下部（</body>直前）に 1 行だけ JS -->
+<script>
+document.querySelector('.nav-toggle')
+  .addEventListener('click', ()=>document
+    .querySelector('.nav-links').classList.toggle('open'));
+</script>
