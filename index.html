@@ -139,11 +139,3 @@ document.querySelector('.nav-toggle').onclick = () =>
   </nav>
 
   …（ヒーロー本文はそのまま）…
-</header>
-
-<!-- ▼ ページ最下部（</body>直前）に 1 行だけ JS -->
-<script>
-document.querySelector('.nav-toggle')
-  .addEventListener('click', ()=>document
-    .querySelector('.nav-links').classList.toggle('open'));
-</script>
